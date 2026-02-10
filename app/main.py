@@ -4,8 +4,11 @@ FastAPI application - Pure Hugging Face models with document upload.
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 import logging
 import uuid
+import os
 
 from app.models import (
     PatientInput,
@@ -41,6 +44,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount static files from frontend directory
+frontend_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
+if os.path.exists(frontend_dir):
+    app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
+
+# Serve index.html at root
+@app.get("/", response_class=FileResponse)
+async def root():
+    """Serve the frontend index.html"""
+    index_path = os.path.join(frontend_dir, "index.html")
+    if os.path.exists(index_path):
+        return index_path
+    raise HTTPException(status_code=404, detail="Frontend not found")
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -59,13 +76,13 @@ async def startup_event():
         logger.info("✓ Document processing ready")
         
     except Exception as e:
-        logger.error(f"Startup failed: {e}")
-        raise
+        logger.warning(f"⚠ ML models not available: {e}")
+        logger.info("Frontend will still be served, but API endpoints may not work")
 
 
-@app.get("/")
-async def root():
-    """Root endpoint."""
+@app.get("/api/info")
+async def api_info():
+    """API info endpoint."""
     return {
         "message": "MedAssist Pro - Clinical Decision Support System",
         "version": "2.0.0",
