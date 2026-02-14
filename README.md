@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 [![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-yellow.svg)](https://huggingface.co/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 
 > ⚠️ **Educational Purpose Only**: This is a demonstration project for educational purposes. Not intended for actual medical diagnosis or treatment decisions.
 
@@ -34,7 +34,7 @@ MedAssist Pro is an advanced Clinical Decision Support System (CDSS) that combin
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/medassist-pro.git
+git clone https://github.com/akshara12code/jhu-1
 cd medassist-pro
 ```
 
