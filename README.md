@@ -7,7 +7,13 @@
 [![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-yellow.svg)](https://huggingface.co/)
 
 
-> ⚠️ **Educational Purpose Only**: This is a demonstration project for educational purposes. Not intended for actual medical diagnosis or treatment decisions.
+<img width="943" height="966" alt="Screenshot 2026-02-10 232913" src="https://github.com/user-attachments/assets/f8d9db4f-e692-4b87-87d4-a4bc2a3fbaae" />
+
+<img width="941" height="963" alt="Screenshot 2026-02-10 232920" src="https://github.com/user-attachments/assets/f38b264f-1d84-40a4-9349-51aa9dbf4123" />
+
+<img width="903" height="695" alt="Screenshot 2026-02-10 232929" src="https://github.com/user-attachments/assets/245eaaf5-77e2-4256-92aa-27ef36910046" />
+
+<img width="871" height="604" alt="Screenshot 2026-02-10 232938" src="https://github.com/user-attachments/assets/e8858320-ff14-451b-82db-5a019fa59b60" />
 
 ## 📋 Overview
 
